@@ -1,7 +1,7 @@
 import stateConfig from './state.config';
-import {serversModule} from './modules/servers.module';
-import {NotificationService} from './modules/notification.service';
-import {factoriesModule} from './factories/factories.module';
+import {serversModule} from './modules/servers/servers.module';
+import {NotificationService} from './services/notification.service';
+import {factoriesModule} from './factories';
 
 angular.module('test_project',[
     'ngResource',
