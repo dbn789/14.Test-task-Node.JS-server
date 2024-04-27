@@ -1,6 +1,7 @@
+import template from './serversView.template';
 
 const serversView = {
-  templateUrl: '/partials/servers/view',
+  template: template(),
   controller:[
       'Server',
       '$stateParams',

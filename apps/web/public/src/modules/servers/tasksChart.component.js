@@ -1,5 +1,7 @@
+import template from './tasksChart.template';
+
 const tasksChart = {
-  templateUrl: '/partials/servers/default-chart',
+  template: template(),
   bindings: {
     report: '<',
   },

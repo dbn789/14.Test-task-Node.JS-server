@@ -1,5 +1,7 @@
+import template from './serversList.template';
+
 const serversList = {
-  templateUrl: '/partials/servers/list',
+  template: template(),
   controller:[
       'Server',
       'Task',
@@ -9,7 +11,7 @@ const serversList = {
           this.addTasks = function(){
               if(confirm('Вы хотите добавить задания?')){
                   Task.addRandom(function(){
-                      NotificationService.showSuccess('Задания добавленны')
+                      NotificationService.showSuccess('Задания добавлены');
                   });
               }
           }

@@ -2,19 +2,25 @@ const path = require('path');
 
 module.exports = {
   entry: './apps/web/public/src/app.module.js',
+  mode: 'production',
   output: {
     filename: '[name].bundle.js',
     path: path.join(__dirname, '..', '..', '..', '/apps/web/public/dist'),
     clean: true,
   },
   resolve: {
-    extensions: ['.css', '.ts', '.js'],
+    extensions: ['.pug', '.css', '.ts', '.js'],
+    preferRelative: true,
   },
   module: {
     rules: [
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.pug$/,
+        use: ['@webdiscus/pug-loader'],
       },
       {
         test: /\.js$/,

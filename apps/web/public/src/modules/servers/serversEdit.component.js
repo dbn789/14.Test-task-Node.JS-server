@@ -1,5 +1,7 @@
+import template from './serversEdit.template';
+
 const serversEdit = {
-  templateUrl: '/partials/servers/edit',
+  template: template(),
   controller:[
       'Server',
       '$stateParams',
