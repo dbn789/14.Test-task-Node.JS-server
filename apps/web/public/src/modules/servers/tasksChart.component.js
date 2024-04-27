@@ -51,6 +51,6 @@ const tasksChart = {
         };
       };
     }],
-}
+};
 
-export {tasksChart}
+export {tasksChart};

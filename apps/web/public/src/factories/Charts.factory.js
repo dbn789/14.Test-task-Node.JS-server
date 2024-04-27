@@ -1,14 +1,14 @@
 const Charts = [
-  '$resource', 
+  '$resource',
   function($resource) {
     return $resource('/charts', {}, {
       serverCharts: {
         url: '/charts/:serverId',
-        method:'get',
+        method: 'get',
         isArray: false,
-      }
+      },
     });
-  }
-]
+  },
+];
 
-export {Charts}
+export {Charts};

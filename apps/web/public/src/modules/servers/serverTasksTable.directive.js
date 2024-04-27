@@ -27,7 +27,7 @@ const serverTasksTable = [
             },
             {
               data: 'isComplete',
-              render:function(row,data,full){
+              render: function(row, data, full) {
                 return full.isComplete? 'Да': 'Нет';
               },
             },
@@ -57,6 +57,6 @@ const serverTasksTable = [
         });
       },
     };
-  }]
+  }];
 
-export {serverTasksTable}
+export {serverTasksTable};

@@ -51,6 +51,6 @@ const serverUserActionTable = [
         });
       },
     };
-  }]
+  }];
 
-export {serverUserActionTable}
+export {serverUserActionTable};

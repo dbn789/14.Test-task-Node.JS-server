@@ -1,19 +1,19 @@
 const Server = [
-  '$resource', 
+  '$resource',
   function($resource) {
-    return $resource('/servers/:id', {id: '@_id'},{
-      stop:{
+    return $resource('/servers/:id', {id: '@_id'}, {
+      stop: {
         url: '/servers/:id/stop',
-        method:'get',
-        isArray:false,
+        method: 'get',
+        isArray: false,
       },
-      start:{
+      start: {
         url: '/servers/:id/start',
-        method:'get',
-        isArray:false,
-      }
+        method: 'get',
+        isArray: false,
+      },
     });
-  }
-]
+  },
+];
 
-export {Server}
+export {Server};

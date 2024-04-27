@@ -1,14 +1,14 @@
 const Task = [
-  '$resource', 
+  '$resource',
   function($resource) {
-    return $resource('/tasks/:id', {id: '@_id'},{
-      addRandom:{
+    return $resource('/tasks/:id', {id: '@_id'}, {
+      addRandom: {
         url: '/tasks/add-random',
-        method:'get',
+        method: 'get',
         isArray: false,
-      }
+      },
     });
-  }
-]
+  },
+];
 
-export {Task}
+export {Task};
