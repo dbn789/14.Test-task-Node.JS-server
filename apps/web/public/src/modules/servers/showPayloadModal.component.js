@@ -1,4 +1,4 @@
-import template from './payloadModal.template';
+import template from './showPayloadModal.template';
 
 const showPayloadModal ={
   template: template(),
@@ -9,7 +9,7 @@ const showPayloadModal ={
   controller: [
     function() {
       this.$onInit = function() {
-        this.payload = JSON.stringify(JSON.parse(this.resolve.payload), null, '  ');
+        this.payload = JSON.stringify(this.resolve.payload, null, '  ');
       };
     },
   ],

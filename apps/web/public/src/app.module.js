@@ -7,6 +7,7 @@ angular.module('test_project', [
   'ngResource',
   'ui.bootstrap',
   'ui.router',
+  'hljs',
   serversModule.name,
   factoriesModule.name,
 ])

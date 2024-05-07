@@ -4,6 +4,7 @@ import {serversView} from './serversView.component';
 import {serverUserActionTable} from './serverUserActionTable.directive';
 import {serverTasksTable} from './serverTasksTable.directive';
 import {tasksChart} from './tasksChart.component';
+import {showPayloadModal} from './showPayloadModal.component';
 
 export const serversModule = angular.module('servers', [])
     .component('serversList', serversList)
@@ -11,4 +12,5 @@ export const serversModule = angular.module('servers', [])
     .component('serversView', serversView)
     .directive('serverUserActionTable', serverUserActionTable)
     .directive('serverTasksTable', serverTasksTable)
-    .component('tasksChart', tasksChart);
+    .component('tasksChart', tasksChart)
+    .component('showPayloadModal', showPayloadModal);
