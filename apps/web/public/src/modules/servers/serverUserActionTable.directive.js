@@ -25,6 +25,12 @@ const serverUserActionTable = [
             {
               data: 'action',
             },
+            {
+              data: 'data',
+              render: function(row, data, full) {
+                return '<show-payload-button payload="data"></show-payload-button>';
+              },
+            },
           ],
           order: [[0, 'desc']],
           createdRow: function(row, data) {
