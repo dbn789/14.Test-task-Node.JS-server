@@ -1,4 +1,8 @@
 h4 Сервер {{ $ctrl.server.name }} ({{ $ctrl.server.host }})
+
+br
+a.btn.btn-default(ng-click="$ctrl.showServerInfo()") Просмотр
+br
 uib-tabset
   uib-tab(heading="Инфо")
     include tabs/_info
