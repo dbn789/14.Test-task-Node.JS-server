@@ -8,10 +8,10 @@ const serversView = {
     'NotificationService',
     'Charts',
     '$uibModal',
-    function(Server, $stateParams, NotificationService, Charts, $uibModal) {
-      this.server = Server.get({id: $stateParams.id});
-      this.charts = Charts.serverCharts({serverId: $stateParams.id});
-      this.showServerInfo = function() {
+    function (Server, $stateParams, NotificationService, Charts, $uibModal) {
+      this.server = Server.get({ id: $stateParams.id });
+      this.charts = Charts.serverCharts({ serverId: $stateParams.id });
+      this.showServerInfo = function () {
         $uibModal.open({
           component: 'showPayloadModal',
           size: 'lg',
@@ -20,21 +20,28 @@ const serversView = {
           },
         }).result.catch(angular.noop);
       };
-      this.start = function() {
+      this.start = function () {
         if (confirm('Вы хотите запустить сервер?')) {
-          this.server.$start(function() {
+          this.server.$start(function () {
             NotificationService.showSuccess('Сервер запущен');
           });
         }
       };
-      this.stop = function() {
+      this.stop = function () {
         if (confirm('Вы хотите остановить сервер?')) {
-          this.server.$stop(function() {
+          this.server.$stop(function () {
             NotificationService.showSuccess('Сервер остановлен');
+          });
+        }
+      };
+      this.reload = function () {
+        if (confirm('Вы хотите перезапустить сервер?')) {
+          this.server.$reload(function () {
+            NotificationService.showSuccess('Сервер перезапущен');
           });
         }
       };
     }],
 };
 
-export {serversView};
+export { serversView };

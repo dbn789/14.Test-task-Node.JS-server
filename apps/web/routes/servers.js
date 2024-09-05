@@ -1,7 +1,7 @@
 const express = require('express');
 const moment = require('moment');
 
-const {Server, UserAction} = require('../../../models');
+const { Server, UserAction } = require('../../../models');
 
 const serversRouter = express.Router();
 
@@ -59,8 +59,8 @@ serversRouter.post('/:id', async (req, res) => {
 serversRouter.delete('/:id', async (req, res) => {
   try {
     console.log('delete servers id ', req.params.id);
-    await Server.remove({_id: req.params.id});
-    res.send({status: 'ok'});
+    await Server.remove({ _id: req.params.id });
+    res.send({ status: 'ok' });
   } catch (err) {
     console.log(err);
     res.status(500).send('');
@@ -73,7 +73,7 @@ serversRouter.get('/:id/start', async (req, res) => {
     const server = await Server.findOne({
       _id: req.params.id,
     });
-    server.status='started';
+    server.status = 'started';
     await server.save();
     await UserAction.create({
       serverId: req.params.id,
@@ -101,6 +101,29 @@ serversRouter.get('/:id/stop', async (req, res) => {
       date: moment().format('YYYY-MM-DD HH:mm:ss'),
       user: 'Тестовый пользователь',
       action: 'Пользователь остановил сервер',
+    });
+    res.json(server);
+  } catch (err) {
+    console.log(err);
+    res.json({});
+  }
+});
+
+serversRouter.get('/:id/reload', async (req, res) => {
+  try {
+    console.log('get reload servers id ', req.params.id);
+    const server = await Server.findOne({
+      _id: req.params.id,
+    });
+    server.status = 'stoped';
+    await server.save();
+    server.status = 'started';
+    await server.save();
+    await UserAction.create({
+      serverId: req.params.id,
+      date: moment().format('YYYY-MM-DD HH:mm:ss'),
+      user: 'Тестовый пользователь',
+      action: 'Пользователь перезапустил сервер',
     });
     res.json(server);
   } catch (err) {
